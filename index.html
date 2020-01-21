@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lunar Shuttle Schedule</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="Assets/trains.css">
+
+
+
+</head>
+
+<body>
+    <header class="col-12">
+        <div class="title col-10">
+            <h1>
+                Lunar Shuttle Schedule
+            </h1>
+            <h3>
+                The economical way to travel to Earth's moon.
+            </h3>
+        </div>
+
+    </header>
+
+    <main class="col-12">
+        <div class="spacing col-10">
+            <br>
+            <!--table-->
+            <div class="container container1 col-7">
+                <tr class="topBorder">
+                    <th>Shuttle Company</th>
+                    <th>Terminal</th>
+                    <th>Route Frequency</th>
+                    <th>Next Departure</th>
+                    <th>Minutes Until Departure</th>
+                </tr>
+                <tr class="material">
+                    <!--JS-populated shuttle info-->
+                </tr>
+            </div>
+            <div class="container container2 col-3">
+                <!--data entry form-->
+                <div class="topBorder">
+                    <h6>Add your company's shuttle offerings:</h6>
+                </div>
+                <div id="theForm" class="material">
+                    <label>Your Company</label><br>
+                    <input label="Shuttle Company" type="text" class="formBlanks"><br>
+                    <hr>
+                    <label>Location of Terminal</label><br>
+                    <input label="Terminal" type="text" class="formBlanks"><br>
+                    <hr>
+                    <label>First Shuttle Time</label><br>
+                    <input label="First Time" type="time"><br>
+                    <hr>
+                    <label>Route Frequency</label><br>
+                    <input label="Frequency" type="number"><br>
+                    <hr>
+                    <input type="submit">
+                    <br>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="Assets/trains.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

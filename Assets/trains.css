@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.title {
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    background-color: rgb(0, 51, 153);
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spacing {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container {}
+
+th {}
+
+.container2 {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: black;
+}
+
+#theForm {}
+
+
+}
+#topBorder {}
+#material {}
