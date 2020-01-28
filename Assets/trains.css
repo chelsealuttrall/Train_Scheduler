@@ -30,7 +30,11 @@ main {
     justify-content: flex-start;
 }
 
-.container {}
+.container {
+    display: grid;
+    border-style: solid;
+    border-width: 1px;
+}
 
 th {}
 
@@ -38,6 +42,10 @@ th {}
     border-left-width: 1px;
     border-left-style: solid;
     border-left-color: black;
+}
+
+.formBlanks {
+    width: 100%;
 }
 
 #theForm {}

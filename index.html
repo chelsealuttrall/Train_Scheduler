@@ -37,10 +37,11 @@
                 <tr class="topBorder">
                     <th>Shuttle Company</th>
                     <th>Terminal</th>
-                    <th>Route Frequency</th>
+                    <th>Frequency</th>
                     <th>Next Departure</th>
                     <th>Minutes Until Departure</th>
                 </tr>
+
                 <tr class="material">
                     <!--JS-populated shuttle info-->
                 </tr>
@@ -52,18 +53,18 @@
                 </div>
                 <div id="theForm" class="material">
                     <label>Your Company</label><br>
-                    <input label="Shuttle Company" type="text" class="formBlanks"><br>
+                    <input id="shuttlecompany" label="Shuttle Company" type="text" class="formBlanks"><br>
                     <hr>
                     <label>Location of Terminal</label><br>
                     <input label="Terminal" type="text" class="formBlanks"><br>
                     <hr>
                     <label>First Shuttle Time</label><br>
-                    <input label="First Time" type="time"><br>
+                    <input label="First Time" type="time" class="formBlanks"><br>
                     <hr>
                     <label>Route Frequency</label><br>
-                    <input label="Frequency" type="number"><br>
+                    <input label="Frequency" type="number" class="formBlanks"><br>
                     <hr>
-                    <input type="submit">
+                    <input id="submit" type="submit">
                     <br>
                 </div>
 
@@ -71,11 +72,31 @@
         </div>
     </main>
 
-    <script src="Assets/trains.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="Assets/trains.js"></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <!--<script src="/__/firebase/7.7.0/firebase-app.js"></script> -->
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <!-- <script src="/__/firebase/7.7.0/firebase-analytics.js"></script>-->
+
+    <!-- Add Firebase products that you want to use -->
+    <!-- <script src="/__/firebase/7.7.0/firebase-auth.js"></script>-->
+    <!---->
+    <!--<script src="/__/firebase/7.7.0/firebase-firestore.js"></script>-->
+
+    <!-- Previously loaded Firebase SDKs -->
+
+    <!-- Initialize Firebase -->
+    <!-- <script src="/__/firebase/init.js"></script>-->
+
 </body>
 
 </html>
