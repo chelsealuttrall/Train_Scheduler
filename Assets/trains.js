@@ -28,8 +28,8 @@ const dbRefObject = firebase.database();
 // Firebase watcher + initial loader HINT: .on("value")
 
 dbRefObject.ref().on("child_added", function(snapshot) {
-
-    // Log everything that's coming out of snapshot
+    console.log("LOADING")
+        // Log everything that's coming out of snapshot
     console.log(snapshot.val());
     console.log(snapshot.val().shuttle);
     console.log(snapshot.val().terminal);
@@ -52,18 +52,21 @@ dbRefObject.ref().on("child_added", function(snapshot) {
     first = $("#first").val().trim();
     frequency = $("#frequency").val().trim();
 
-    //on the submit click, put info into db
-    $("submit").on("click", function() {
-        // Code for the push
-        dbRefObject.ref().push({
-            shuttle: shuttle,
-            terminal: terminal,
-            first: first,
-            frequency: frequency,
-            dateAdded: firebase.database.ServerValue.TIMESTAMP
-        });
-    });
 
+
+});
+
+//on the submit click, put info into db
+$("#submit").on("click", function() {
+    console.log("SUBMITTING")
+        // Code for the push
+    dbRefObject.ref().push({
+        shuttle: shuttle,
+        terminal: terminal,
+        first: first,
+        frequency: frequency,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
 });
 
 console.log(moment().format("hh:mm A"));
