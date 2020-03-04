@@ -30,34 +30,41 @@ const dbRefObject = firebase.database();
 dbRefObject.ref().on("child_added", function(snapshot) {
     console.log("LOADING")
         // Log everything that's coming out of snapshot
-    console.log(snapshot.val());
-    console.log(snapshot.val().shuttle);
-    console.log(snapshot.val().terminal);
-    console.log(snapshot.val().first);
-    console.log(snapshot.val().frequency);
+        //time calcs
+    let currentTime = moment().format("hh:mm A");
+    let firstShuttleTime = snapshot.val().first;
+    let frequencyFormat = moment().format("hhmm");
+    let frequencyCalc = snapshot.val().frequency;
+    var nextDepart = "";
+    var minutesUntil = moment().startOf('hour').fromNow();
 
+    nextDepart = firstShuttleTime + currentTime;
+    minutesUntil = nextDepart - currentTime;
+    console.log(snapshot.val());
     // Change the HTML to reflect DB info
-    $("tbody").prepend().html(`<tr>
+    $("tbody").html(
+        `<tr>
         <td> ${snapshot.val().shuttle}</td>  
         <td> ${snapshot.val().terminal}</td> 
         <td> ${snapshot.val().frequency}</td> 
-        <td> ${snapshot.val().comment}</td> 
-        <td> ${snapshot.val().comment}</td> 
+        <td> ${nextDepart}</td> 
+        <td> ${minutesUntil}</td> 
         </tr>`);
 
 
 
-
-    // $("td#shuttleCompany").append(snapshot.val().shuttle);
-    // $("td#terminal").append(snapshot.val().terminal);
-    // $("td#frequency").append(;
-    //     //make this a formula to calc next depart
-    //     $("td#nextDepart").append(snapshot.val().comment); $("td#minutesUntil").append; $("tr#object").append("<hr>");
-    //     //preObject.innerText = JSON.stringify(snap.val(), null, 3);
-
-
-
 });
+
+// $("td#shuttleCompany").append(snapshot.val().shuttle);
+// $("td#terminal").append(snapshot.val().terminal);
+// $("td#frequency").append(;
+//     //make this a formula to calc next depart
+//     $("td#nextDepart").append(snapshot.val().comment); $("td#minutesUntil").append; $("tr#object").append("<hr>");
+//     //preObject.innerText = JSON.stringify(snap.val(), null, 3);
+
+
+
+
 
 //on the submit click, put info into db
 $("#submit").on("click", function() {
@@ -76,7 +83,9 @@ $("#submit").on("click", function() {
     });
 });
 
-console.log(moment().format("hh:mm A"));
+//console.log(moment().format("hh:mm A"));
+//console.log(moment().format("hhmm"));
+//moment().startOf('hour').fromNow();      
 
 //put pulled info on chart and in firebase
 //$(shuttleCompany.shuttle).append(tr.material)
