@@ -25,22 +25,25 @@ var minutesUntil = "";
 
 const dbRefObject = firebase.database();
 
+//time calcs
+let currentTime = moment().format("hh:mm A");
+
+let frequencyFormat = moment().format("hhmm");
+
+var nextDepart = "";
+var minutesUntil = moment().startOf('hour').fromNow();
+
+
 // Firebase watcher + initial loader HINT: .on("value")
 
 dbRefObject.ref().on("child_added", function(snapshot) {
     console.log("LOADING")
         // Log everything that's coming out of snapshot
-        //time calcs
-    let currentTime = moment().format("hh:mm A");
     let firstShuttleTime = snapshot.val().first;
-    let frequencyFormat = moment().format("hhmm");
     let frequencyCalc = snapshot.val().frequency;
-    var nextDepart = "";
-    var minutesUntil = moment().startOf('hour').fromNow();
-
     nextDepart = firstShuttleTime + currentTime;
     minutesUntil = nextDepart - currentTime;
-    console.log(snapshot.val());
+    // console.log(snapshot.val());
     // Change the HTML to reflect DB info
     $("tbody").html(
         `<tr>
