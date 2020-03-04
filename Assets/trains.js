@@ -35,22 +35,25 @@ dbRefObject.ref().on("child_added", function(snapshot) {
     console.log(snapshot.val().terminal);
     console.log(snapshot.val().first);
     console.log(snapshot.val().frequency);
-    // Change the HTML to reflect
-    $("#shuttle").text(snapshot.val().shuttle);
-    $("#terminal").text(snapshot.val().terminal);
-    $("#frequency").text(snapshot.val().frequency);
-    //make this a formula to calc next depart
-    $("#nextDepart").text(snapshot.val().comment);
-    $("#minutesUntil").text(snapshot.val().comment);
 
-    //preObject.innerText = JSON.stringify(snap.val(), null, 3);
-    // Capture Button Click
+    // Change the HTML to reflect DB info
+    $("tbody").prepend().html(`<tr>
+        <td> ${snapshot.val().shuttle}</td>  
+        <td> ${snapshot.val().terminal}</td> 
+        <td> ${snapshot.val().frequency}</td> 
+        <td> ${snapshot.val().comment}</td> 
+        <td> ${snapshot.val().comment}</td> 
+        </tr>`);
 
 
-    shuttle = $("#shuttlecompany").val().trim();
-    terminal = $("#terminal").val().trim();
-    first = $("#first").val().trim();
-    frequency = $("#frequency").val().trim();
+
+
+    // $("td#shuttleCompany").append(snapshot.val().shuttle);
+    // $("td#terminal").append(snapshot.val().terminal);
+    // $("td#frequency").append(;
+    //     //make this a formula to calc next depart
+    //     $("td#nextDepart").append(snapshot.val().comment); $("td#minutesUntil").append; $("tr#object").append("<hr>");
+    //     //preObject.innerText = JSON.stringify(snap.val(), null, 3);
 
 
 
@@ -59,7 +62,11 @@ dbRefObject.ref().on("child_added", function(snapshot) {
 //on the submit click, put info into db
 $("#submit").on("click", function() {
     console.log("SUBMITTING")
-        // Code for the push
+    shuttle = $("input#shuttlecompany").val().trim();
+    terminal = $("input#terminal").val().trim();
+    first = $("input#first").val().trim();
+    frequency = $("input#frequency").val().trim();
+    // Code for the push
     dbRefObject.ref().push({
         shuttle: shuttle,
         terminal: terminal,
